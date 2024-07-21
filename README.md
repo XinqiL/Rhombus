@@ -18,7 +18,10 @@ Step 2: Set Up Firebase
   - Rename the file to firebase-adminsdk.json.
 
 Step 3: Build the Project
-Install Dependencies:
+1. Create a Virtual Environment
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+2. Install Dependencies:
 pip install -r requirements.txt
 
 Step 4: Run the Project
