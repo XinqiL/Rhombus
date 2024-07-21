@@ -6,13 +6,22 @@ This README details the steps required to set up and run the Django backend, whi
 
 Python 3.10.9
 
-## Step 1: Create Environment Variables
+## Step 1: Create a Virtual Environment
+
+`python -m venv venv`
+`source venv/bin/activate` # On Windows use `venv\Scripts\activate`
+
+## Step 2: Install Dependencies
+
+`pip install -r requirements.txt`
+
+## Step 3: Create Environment Variables
 
 1. Create a `.env` file in the main project folder.
 2. Add the following line to the file, replacing your-openai-apikey with your actual OpenAI API key:
    `OPENAI_APIKEY=your-openai-apikey`
 
-## Step 2: Set Up Firebase
+## Step 4: Set Up Firebase
 
 1. Reuse Existing Firebase Project:
 
@@ -28,16 +37,9 @@ Python 3.10.9
 - Move the downloaded JSON file to the main project folder.
 - Rename the file to `firebase-adminsdk.json`.
 
-## Step 3: Install Dependencies
+## Step 5: Build and Run the Project
 
-`pip install -r requirements.txt`
-
-## Step 4: Build and Run the Project
-
-1. Create a Virtual Environment
-   `python -m venv venv`
-   `source venv/bin/activate` # On Windows use `venv\Scripts\activate`
-2. Migrate the Database:
+1. Migrate the Database:
    `python manage.py migrate`
-3. Start the Server:
+2. Start the Server:
    `python manage.py runserver`
