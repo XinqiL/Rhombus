@@ -1,36 +1,43 @@
+# Regex Replacement Project - Backend
+
+This README details the steps required to set up and run the Django backend, which is uniquely integrated with the OpenAI API. The backend is configured to work in conjunction with the frontend setup previously described and uses Firebase as part of its infrastructure.
+
+## Environment and Dependencies
+
 Python 3.10.9
-django-admin --version 5.0.7
 
-Step 1: Create Environment Variables
-Create a .env file in the main project folder.
-Add the following line to the file, replacing your-openai-apikey with your actual OpenAI API key:
-OPENAI_APIKEY=your-openai-apikey
+## Step 1: Create Environment Variables
 
-Step 2: Set Up Firebase
-1. Create a New Firebase Project:
-  - Go to the Firebase Console.
-  - Click on "Add project" and follow the instructions to create a new Firebase project.
+1. Create a `.env` file in the main project folder.
+2. Add the following line to the file, replacing your-openai-apikey with your actual OpenAI API key:
+   `OPENAI_APIKEY=your-openai-apikey`
+
+## Step 2: Set Up Firebase
+
+1. Reuse Existing Firebase Project:
+
+- This backend leverages the same Firebase project established for the frontend. Continue with the configuration using the existing project details. For initial setup instructions or further information, please consult the frontend README at https://github.com/XinqiL/rhombus-frontend
+
 2. Download Firebase Admin SDK JSON File:
-  - In your Firebase project, navigate to Project settings > Service accounts.
-  - Click "Generate new private key" and download the JSON file.
+
+- In your Firebase project, navigate to `Project settings > Service accounts`.
+- Click "Generate new private key" and download the JSON file.
+
 3. Configure Your Project:
-  - Move the downloaded JSON file to the main project folder.
-  - Rename the file to firebase-adminsdk.json.
 
-Step 3: Build the Project
+- Move the downloaded JSON file to the main project folder.
+- Rename the file to `firebase-adminsdk.json`.
+
+## Step 3: Install Dependencies
+
+`pip install -r requirements.txt`
+
+## Step 4: Build and Run the Project
+
 1. Create a Virtual Environment
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-2. Install Dependencies:
-pip install -r requirements.txt
-
-Step 4: Run the Project
-1. Migrate the Database:
-python manage.py migrate
-2. Start the Server:
-python manage.py runserver
-
-
-
-
-
+   `python -m venv venv`
+   `source venv/bin/activate` # On Windows use `venv\Scripts\activate`
+2. Migrate the Database:
+   `python manage.py migrate`
+3. Start the Server:
+   `python manage.py runserver`
