@@ -1,14 +1,8 @@
+import os
 import json
 import base64
 import firebase_admin
 from firebase_admin import credentials
-
-with open('./firebase-adminsdk.json', 'r') as file:
-    firebase_config = json.load(file)
-
-project_id = firebase_config['project_id']
-
-import os
 
 if not firebase_admin._apps:
     # Get the Base64 encoded string from environment variable
@@ -22,6 +16,7 @@ if not firebase_admin._apps:
     # Convert bytes to ASCII string then parse JSON
     service_account_info = json.loads(decoded_bytes.decode('ascii'))
     
+    project_id = service_account_info['project_id']
     # Create a credential object from the service account info
     cred = credentials.Certificate(service_account_info)
     
