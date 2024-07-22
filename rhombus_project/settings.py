@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-a0)&atk_jgrs+4cr^#bs%rbqdhw!a1i@37#m!nd!^vgy5gsplh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['regexwizard.netlify.app', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['regexwizard-b1bf3b4302d6.herokuapp.com', 'regexwizard.netlify.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
