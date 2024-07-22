@@ -28,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-a0)&atk_jgrs+4cr^#bs%rbqdhw!a1i@37#m!nd!^vgy5gsplh"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://regexwizard-b1bf3b4302d6.herokuapp.com/', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -135,3 +135,7 @@ CORS_ORIGIN_WHITELIST = [
      'http://localhost:3000', 
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+# Ensure the static root exists:
+os.makedirs(STATIC_ROOT, exist_ok=True)
